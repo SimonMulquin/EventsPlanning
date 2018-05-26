@@ -18,22 +18,33 @@
 
 ## Features to be covered for the v.1 
 
-  -Authentication with Google Oauth
-  -Own Calendar
-  -Event creation
-  -Event dates edition
-  -Filter Events
-  -Multiple Calendars support
-  -Calendar publishing 
-  -Calendars merged view
+  *Authentication with Google Oauth
+  *Own Calendar
+  *Event creation
+  *Event dates edition
+  *Filter Events
+  *Multiple Calendars support
+  *Calendar publishing 
+  *Calendars merged view
+
+## Features to be covered for the v.2
+
+  *Events Logistics enhancement
+  *Events HR enhancement
+  *Logistics checklist
+  *Logistics allocated locations
+  *Logistics allocated HR
+  *HR roles
+  *HR missions
 
 ## Political promises
 
-  -Link with google agenda
-  -CSV import/export
-  -Open API
-  -Offline and lie-fy coverage
-  -Notifications
-  -...
+  *Link with google agenda
+  *CSV import/export
+  *Open API
+  *Offline and lie-fy coverage
+  *Notifications
+  *Outer actions planning
+  *...
 
   Pending
