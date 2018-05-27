@@ -7,7 +7,7 @@ export const Container = styled.ul`
   position: relative;
   height: ${({ theme }) => theme.view.navigation.height};
   width: 100%;
-  padding: 0;
+  padding: 0 0 0 3px;
   overflow-y: hidden;
   overflow-x: auto;
   border-bottom: 1px solid black;

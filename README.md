@@ -67,7 +67,7 @@
   * Carpooling (event options or participants )
   * Carpooling analysis
   * Configurable anayltics
-  * Participant "must have" list
+  * Participant "must have" listbetter use Luxon or moment ?
   * Participant appreciation reporting
   * Configurable Participant appreciation form
   * Participants analytics
@@ -88,5 +88,6 @@
   * Events splitting
   * Holidays
   * Mobile app
+  * Timezones friendly
 
   Pending
