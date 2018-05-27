@@ -1,13 +1,13 @@
 export default [
   {
     component: 'MonthCalendar',
-    content: {
+    withProps: {
       title: 'Calendrier personnel',
     }
   },
   { 
     component: 'MonthCalendar',
-    content: {
+    withProps: {
       title: 'Calendrier asbl',
     }
   }

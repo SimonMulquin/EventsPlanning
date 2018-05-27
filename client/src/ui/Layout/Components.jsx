@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 import Header from './Header/main';
 import ViewContent from './ViewContent/main';
+import ViewNavigation from './ViewNavigation/main';
 
-export { Header, ViewContent };
+export { Header, ViewContent, ViewNavigation };
 
 export const Page = styled.div`
   display: block;
@@ -44,14 +45,4 @@ export const View = styled.div`
   left: ${({ theme }) => theme.tools.left.width};
   height: calc(100vh - ${({ theme }) => theme.header.height});
   overflow: hidden;
-`;
-
-export const ViewNavigation =styled.ul`
-  display: block;
-  position: relative;
-  height: ${({theme}) => theme.view.navigation.height};
-  width: 100%;
-  overflow-y: hidden;
-  overflow-x: auto;
-  border-bottom: 1px solid black;
 `;
