@@ -1,8 +1,8 @@
 import React from 'react';
 
-const MonthCalendar = () => {
+const MonthCalendar = ({title}) => {
   return (
-    <div>My first calendar !</div>
+    <div>{title}</div>
   );
 };
 

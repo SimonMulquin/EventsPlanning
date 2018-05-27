@@ -18,6 +18,6 @@ export const Title = styled.h1`
 `;
 
 export const Repo = styled.a`
-  font-size: 20px;
+  font-size: 20px;    
   color: #fff;
 `;

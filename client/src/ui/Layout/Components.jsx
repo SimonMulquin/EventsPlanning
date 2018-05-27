@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 import Header from './Header/main';
+import ViewContent from './ViewContent/main';
 
-export { Header };
+export { Header, ViewContent };
 
 export const Page = styled.div`
   display: block;
@@ -53,14 +54,4 @@ export const ViewNavigation =styled.ul`
   overflow-y: hidden;
   overflow-x: auto;
   border-bottom: 1px solid black;
-`;
-
-export const ViewContent = styled.div`
-  display: block;
-  position: relative;
-  width: 100%;
-  height: calc(100vh - ${({ theme }) => theme.header.height + theme.view.navigation.height});
-  overflow-x: hidden;
-  overflow-y: auto;
-  text-align: center;
 `;

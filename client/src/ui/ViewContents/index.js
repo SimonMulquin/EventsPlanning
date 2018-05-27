@@ -1,5 +1,5 @@
 import MonthCalendar from './Calendars/Month/main';
 
-export {
+export default {
   MonthCalendar
 };
