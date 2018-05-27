@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import { Page, Header, LeftTool, RightTool, View, ViewNavigation, Calendar } from './ui/Layout/Components.jsx';
-import theme from './configs/theme';
-
-import Default from './ui/Pages/Default/main';
-
+import { Page, Header, LeftTool, RightTool, View, ViewNavigation, ViewContent } from 'ui/Layout/Components.jsx';
+import theme from 'configs/theme';
 
 class App extends Component {
   render() {
@@ -18,7 +15,7 @@ class App extends Component {
             <LeftTool />
             <View>
               <ViewNavigation />
-              <Calendar />
+              <ViewContent />
             </View>
             <RightTool />
           </Page>

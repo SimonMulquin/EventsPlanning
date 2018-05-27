@@ -1,19 +1,14 @@
 import styled from 'styled-components';
 
+import Header from './Header/main';
+
+export { Header };
+
 export const Page = styled.div`
   display: block;
   position: relative;
   width: 100%;
   min-height: 100vh;
-`;
-
-export const Header = styled.div`
-  display: block;
-  position: fixed;
-  width: 100%;
-  height: ${({theme}) => theme.header.height};
-  background-color: ${({theme}) => theme.header.colour};
-  border-bottom: 1px solid black;
 `;
 
 export const LeftTool = styled.div`
@@ -60,7 +55,7 @@ export const ViewNavigation =styled.ul`
   border-bottom: 1px solid black;
 `;
 
-export const Calendar = styled.div`
+export const ViewContent = styled.div`
   display: block;
   position: relative;
   width: 100%;

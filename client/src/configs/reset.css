@@ -1,6 +1,7 @@
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
+  font-size: 1em;
 }
 
 body {
@@ -8,7 +9,7 @@ body {
   position: relative;
   width: 100vw;
   height: auto;
-  min-height: 100vh;
+  min-height: 100vh;  
   padding: 0;
   overflow: hidden;
   font-size: 1vw;
