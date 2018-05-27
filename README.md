@@ -2,7 +2,7 @@
 
 ## Introduction
 
-  This project aim to provide efficient, user friendly events planning tool to non-profits and small businesses.
+  This project aim to provide efficient, powerfull, user friendly events planning tool to non-profits and small businesses.
 
 ## Goals 
 
@@ -18,33 +18,75 @@
 
 ## Features to be covered for the v.1 
 
-  *Authentication with Google Oauth
-  *Own Calendar
-  *Event creation
-  *Event dates edition
-  *Filter Events
-  *Multiple Calendars support
-  *Calendar publishing 
-  *Calendars merged view
+  * Authentication with Google Oauth
+  * French
+  * Own Calendar
+  * Month View
+  * Event creation
+  * Event edition
+  * Filter Events
+  * Multiple Calendars support
+  * Calendar publishing 
+  * Calendars merged view
 
 ## Features to be covered for the v.2
 
-  *Events Logistics enhancement
-  *Events HR enhancement
-  *Logistics checklist
-  *Logistics allocated locations
-  *Logistics allocated HR
-  *HR roles
-  *HR missions
+  * Events Logistics enhancement
+  * Events HR enhancement
+  * Logistics checklist
+  * Logistics allocated locations
+  * Logistics allocated HR
+  * HR roles
+  * HR missions
+  * HR notes
+  * Day View
+  * Week view
+
+## Features to be covered for the v.3
+
+  * HR part-time support
+  * HR replacement
+  * HR expenses reporting
+  * Logistics expenses reporting
+  * Benefits reporting
+  * Year view
+  * Expenses/Benefits analytics
+  * Logistics needs analytics
+  * HR needs analytics
+  * HR profiles analytics
+
+## v.4+
+
+  * Incidents reports
+  * Incidents analytics
+  * Incidents expenses reporting
+  * Events workflow side effects
+  * Maps
+  * Contacts
+  * Newsletters
+  * Carpooling (event options or participants )
+  * Carpooling analysis
+  * Configurable anayltics
+  * Participant "must have" list
+  * Participant appreciation reporting
+  * Configurable Participant appreciation form
+  * Participants analytics
+  * ticketing
+  * ...
 
 ## Political promises
 
-  *Link with google agenda
-  *CSV import/export
-  *Open API
-  *Offline and lie-fy coverage
-  *Notifications
-  *Outer actions planning
-  *...
+  * Link with google agenda
+  * Link with outlook agenda
+  * CSV import/export
+  * Configurable anayltics
+  * Open API
+  * Offline and lie-fy coverage
+  * Notifications
+  * Outer actions planning
+  * Polylanguage
+  * Events splitting
+  * Holidays
+  * Mobile app
 
   Pending
