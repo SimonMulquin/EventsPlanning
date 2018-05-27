@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   display: inline-block;
   position: relative;
-  width: ${({theme}) => theme.tools.left.width};
+  width: ${({theme}) => theme.tools.left.width}em;
   line-height: ${({ theme }) => theme.header.height};
   text-align: center;
 `;

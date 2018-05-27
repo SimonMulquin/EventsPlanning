@@ -16,7 +16,7 @@ export const Page = styled.div`
 export const LeftTool = styled.div`
   display: inline-block;
   position: fixed;
-  width: ${({theme}) => theme.tools.left.width};
+  width: ${({theme}) => theme.tools.left.width}em;
   top: ${({theme}) => theme.header.height};
   left: 0;
   height: calc(100vh - ${({theme}) => theme.header.height});
@@ -28,7 +28,7 @@ export const LeftTool = styled.div`
 export const RightTool = styled.div`
   display: inline-block;
   position: fixed;
-  width: ${({ theme }) => theme.tools.right.width};
+  width: ${({ theme }) => theme.tools.right.width}em;
   top: ${({ theme }) => theme.header.height};
   right: 0;
   height: calc(100vh - ${({ theme }) => theme.header.height});
@@ -40,9 +40,9 @@ export const RightTool = styled.div`
 export const View = styled.div`
   display: inline-block;
   position: fixed;
-  width: ${({ theme }) => theme.view.width};
+  width: ${({ theme }) => theme.view.width}em;
   top: ${({ theme }) => theme.header.height};
-  left: ${({ theme }) => theme.tools.left.width};
+  left: ${({ theme }) => theme.tools.left.width}em;
   height: calc(100vh - ${({ theme }) => theme.header.height});
   overflow: hidden;
 `;

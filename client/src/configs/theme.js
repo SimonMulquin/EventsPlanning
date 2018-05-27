@@ -6,21 +6,24 @@ export default {
     color: mainColor,
   },
   view: {
-    width: '60em',
+    width: '60',
     navigation: {
       height: '42px',
       option: {
         activeColor: '#fff',
         activeBackground: mainColor
       }
+    },
+    calendar: {
+      width: 57
     }
   },
   tools: {
     left: {
-      width: '15em'
+      width: '15'
     },
     right: {
-      width: '25em'
+      width: '25'
     }
   },
 };
