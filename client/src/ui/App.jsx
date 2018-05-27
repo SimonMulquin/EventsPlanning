@@ -19,12 +19,20 @@ class App extends Component {
               <Header />
               <LeftTool />
               <View>
-                <Route path='/:viewContent'>
-                  <ViewNavigation options={initialViewContents.map(({ withProps }, index) => ({
-                    label: withProps.title,
-                    to: `/${index}`
-                  }))} />
-                </Route>
+                <Switch>
+                  <Route path='/:viewContent' render={() => (
+                    <ViewNavigation options={initialViewContents.map(({ withProps }, index) => ({
+                      label: withProps.title,
+                      to: `/${index}`
+                    }))} />
+                  )} />
+                  <Route render={() => (
+                    <ViewNavigation options={initialViewContents.map(({ withProps }, index) => ({
+                      label: withProps.title,
+                      to: `/${index}`
+                    }))} />
+                  )} />
+                </Switch>
                 <Switch>
                   <Route path='/:viewContent' component={ViewContent} />
                   <Route render={() => (
