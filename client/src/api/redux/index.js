@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux';
 
-import reducers from './reducers.js';
-import actions from './actions.js';
+import viewContents from './reducers/viewContents.js';
 
-export default combineReducers(reducers);
+export default combineReducers({
+  viewContents,
+});
 
-export const {
-  setContent
-} = actions;
+export const actionCreator = dispatch => (type, payload) => dispatch({type, payload});
