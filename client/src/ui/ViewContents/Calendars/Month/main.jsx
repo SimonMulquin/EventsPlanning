@@ -1,27 +1,16 @@
 import React from 'react';
-import { DateTime, Info } from 'luxon';
+import { Info } from 'luxon';
+
+import { locale } from 'configs/intl';
+
+import getCalendarDatas from 'tools/helpers/formats/calendarDatasHelper';
 
 import { Calendar, CalendarHead, CalendarHeadElement, CalendarRange, CalendarRangeElement} from './style';
 
-const locale = 'fr';
+const { weekdays } = Info;
 
-const dt = DateTime.local().setLocale(locale);
-
-const { months, weekdays } = Info;
-
-const getCalendarDatas = (date) => ({
-  year: date.year,
-  month: {
-    index: date.month,
-    label: months('long', {locale})[date.month - 1]
-  },
-  weekLength: weekdays('long', { locale }).length,
-  start: date.startOf('month'),
-  end: date.endOf('month'),
-});
-
-const MonthCalendar = ({title, targetedISOdate}) => {
-  const calendarData = getCalendarDatas(targetedISOdate != null ? dt.fromISO(targetedISOdate) : dt);
+const MonthCalendar = ({title, targetedDate}) => {
+  const calendarData = getCalendarDatas(targetedDate);
 
   const { start, end, weekLength } = calendarData;
 

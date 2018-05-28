@@ -15,7 +15,7 @@ export const CalendarHead = styled.div`
 `;
 
 export const CalendarRange = styled(CalendarHead) `
-  max-height: 80px;
+  max-height: ${props => props.theme.view.calendar.width / (props.number + 1) }em;
 `;
 
 export const CalendarHeadElement = styled.div`
@@ -26,6 +26,6 @@ export const CalendarHeadElement = styled.div`
 `;
 
 export const CalendarRangeElement = styled(CalendarHeadElement)`
-  min-height: 80px;
+  min-height: ${props => props.theme.view.calendar.width / (props.number + 1) }em;
   text-align: right;
 `;
