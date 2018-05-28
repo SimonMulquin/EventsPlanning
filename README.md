@@ -67,7 +67,7 @@
   * Carpooling (event options or participants )
   * Carpooling analysis
   * Configurable anayltics
-  * Participant "must have" listbetter use Luxon or moment ?
+  * Participant "must have" list
   * Participant appreciation reporting
   * Configurable Participant appreciation form
   * Participants analytics
