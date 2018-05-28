@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import viewContents from './reducers/viewContents.js';
+import viewContents from './viewContentsReducer';
 
 export default combineReducers({
   viewContents,
