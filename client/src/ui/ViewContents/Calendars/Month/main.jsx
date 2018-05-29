@@ -1,5 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Info } from 'luxon';
+
+import { addToTargetedDate } from 'api/redux';
 
 import { locale } from 'configs/intl';
 
@@ -9,7 +12,7 @@ import { Calendar, CalendarHead, CalendarHeadElement, CalendarRange, CalendarRan
 
 const { weekdays } = Info;
 
-const MonthCalendar = ({title, targetedDate}) => {
+const MonthCalendar = ({title, targetedDate, targetedDateAdd}) => {
   const calendarData = getCalendarDatas(targetedDate);
 
   const { start, end, weekLength } = calendarData;
@@ -40,8 +43,14 @@ const MonthCalendar = ({title, targetedDate}) => {
       <h2>{title}</h2>
       <div>
         <div>
-          <h3>{calendarData.month.label}</h3>
-          <span>{calendarData.year}</span>
+          <div>
+            <button onClick={() => targetedDateAdd({months: -1})} >-</button>
+            <strong>{calendarData.month}</strong>
+            <button onClick={() => targetedDateAdd({months: 1})} >+</button>
+          </div>
+          <button onClick={() => targetedDateAdd({ years: -1 })} >-</button>
+          <strong>{calendarData.year}</strong>
+          <button onClick={() => targetedDateAdd({ years: 1 })} >+</button>
         </div>
         <div>
           <Calendar>
@@ -66,4 +75,6 @@ const MonthCalendar = ({title, targetedDate}) => {
   );
 };
 
-export default MonthCalendar;
+export default connect(null, dispatch => ({
+  targetedDateAdd: payload => dispatch(addToTargetedDate(payload))
+}))(MonthCalendar);

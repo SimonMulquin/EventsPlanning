@@ -11,10 +11,7 @@ export default  (date, viewType = 'month') => (
    */
   {
     year: date.year,
-    month: {
-      index: date.month,
-      label: months('long', { locale })[date.month - 1]
-    },
+    month: months('long', { locale })[date.month - 1],
     weekLength: weekdays('long', { locale }).length,
     start: date.startOf(viewType),
     end: date.endOf(viewType),

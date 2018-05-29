@@ -6,4 +6,7 @@ export default combineReducers({
   viewContents,
 });
 
-export const actionCreator = dispatch => (type, payload) => dispatch({type, payload});
+export const addToTargetedDate = payload => ({
+  type: "VC_ADD_TO_TARGETED_DATE",
+  payload
+});
