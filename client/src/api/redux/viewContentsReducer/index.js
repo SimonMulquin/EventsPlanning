@@ -4,8 +4,6 @@ import initial from 'configs/initialViewContents';
 
 import withProps from './withPropsReducer';
 
-//could improve based on https://stackoverflow.com/questions/36786244/nested-redux-reducers
-
 const actions = (state, payload) => ({
   "VC_UPDATE": merge(state, payload),
   "VC_CLEAN": [],
@@ -13,14 +11,15 @@ const actions = (state, payload) => ({
 }); 
 
 export default (state = initial, { type, payload }) => 
-  actions(state, payload)[type] ? 
+  Object.keys(actions).includes(type) ? 
   actions(state, payload)[type] : 
-  state.map((nestedState, index) => 
-    payload && index === payload.contentIndex ? 
+  state.map((nestedState, index) => {
+    console.log(nestedState.withProps);
+    return true ? 
     {
       ...nestedState,
-      withProps: withProps(state, {type, payload})
+      withProps: withProps(nestedState.withProps, { type, payload })
     }:
      nestedState
-  )
+  })
 ;

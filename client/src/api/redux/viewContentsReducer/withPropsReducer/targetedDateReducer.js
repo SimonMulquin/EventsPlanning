@@ -1,5 +1,5 @@
 const actions = (state, payload) => ({
-  "VC_WP_TARGETED_DATE_ADD": state.plus(payload)
+  "VC_WP_TARGETED_DATE_ADD": state
 });
 
 export default (state, { type, payload }) =>

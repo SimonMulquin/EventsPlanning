@@ -1,16 +1,18 @@
 import merge from 'deepmerge';
 
-import targetedDateReducer from './targetedDateReducer';
+import initial from 'configs/initialViewContents';
+
+import targetedDate from './targetedDateReducer';
 
 const actions = (state, payload) => ({
   "VC_WP_UPDATE": merge(state, payload),
 });
 
 export default (state, { type, payload }) => 
-  actions(state, payload)[type] ? 
+  Object.keys(actions).includes(type) ? 
   actions(state, payload)[type] : 
   {
     ...state,
-    targetedDate: targetedDateReducer(state, {type, payload})
+    targetedDate: targetedDate(state.targetedDate, {type, payload}) //should define a data date format
   }
 ;
