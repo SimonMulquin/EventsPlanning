@@ -13,7 +13,7 @@ const actions = {
 export default (state = initial, { type, payload }) => 
   payload && actions[type] ? 
   actions[type](state, payload) : 
-  state.map((nestedState, index) => true ? 
+  state.map((nestedState, index) => payload && index === payload.index ? 
     {
       ...nestedState,
       withProps: withProps(nestedState.withProps, { type, payload })

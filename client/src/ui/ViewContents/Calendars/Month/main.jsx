@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { Info } from 'luxon';
 
 import { addToTargetedDate } from 'api/redux';
@@ -75,6 +76,6 @@ const MonthCalendar = ({title, targetedDate, targetedDateAdd}) => {
   );
 };
 
-export default connect(null, dispatch => ({
-  targetedDateAdd: payload => dispatch(addToTargetedDate(payload))
-}))(MonthCalendar);
+export default withRouter(connect(null, (dispatch, ownProps) => ({
+  targetedDateAdd: payload => dispatch(addToTargetedDate({...payload, index: parseInt(ownProps.match.params.viewContent)}))
+}))(MonthCalendar));

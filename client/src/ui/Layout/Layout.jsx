@@ -19,15 +19,12 @@ const Layout = ({ viewContents }) => {
               to: `/${index}`
             }))} />
           )
-        }} withDefault={true} />
+        }} withDefault />
         <Routes routes={{
-          "/by-default": () => (
-            <ViewContent content={viewContents[0]} />
-          ),
           "/:viewContent": () => (
             <ViewContent />
           )
-        }} withDefault={true} />
+        }}  />
       </View>
       <RightTool />
     </Page>
