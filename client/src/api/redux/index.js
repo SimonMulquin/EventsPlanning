@@ -10,3 +10,8 @@ export const addToTargetedDate = payload => ({
   type: "VC_ADD_TO_TARGETED_DATE",
   payload
 });
+
+export const addViewContent = payload => ({
+  type: "VC_ADD",
+  payload
+})

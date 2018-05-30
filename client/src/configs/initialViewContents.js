@@ -18,5 +18,11 @@ export default [
       title: 'Calendrier asbl',
       targetedDate,
     }
+  },
+  {
+    component: 'ViewsManager',
+    withProps: {
+      title: 'Organiser'
+    }
   }
 ]
