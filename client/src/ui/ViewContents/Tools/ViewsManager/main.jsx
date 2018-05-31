@@ -18,7 +18,7 @@ class ViewsManager extends Component {
         <ul>
           {viewContents.filter(vc => vc.component !== 'ViewsManager').map((view, index) => (
             <li>
-              <span>{view.withProps.title}</span>
+              <span>{view.title}</span>
             </li>
           ))}
         </ul>

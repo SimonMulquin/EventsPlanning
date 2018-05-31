@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
 
 import Routes from 'tools/utils/Structures/Routes';
 
@@ -14,17 +14,13 @@ const Layout = ({ viewContents }) => {
       <View>
         <Routes routes={{
           "/:viewContent": () => (
-            <ViewNavigation options={viewContents.map(({ withProps }, index) => ({
-              label: withProps.title,
+            <ViewNavigation options={viewContents.map(({ title }, index) => ({
+              label: title,
               to: `/${index}`
             }))} />
           )
         }} withDefault />
-        <Routes routes={{
-          "/:viewContent": () => (
-            <ViewContent />
-          ),
-        }}  />
+        <Route path="/:viewContent" component={ ViewContent }  />
       </View>
       <RightTool />
     </Page>

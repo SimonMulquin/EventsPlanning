@@ -13,21 +13,24 @@ import { Calendar, CalendarHead, CalendarHeadElement, CalendarRange, CalendarRan
 
 const { weekdays } = Info;
 
-const MonthCalendar = ({title, targetedDate, targetedDateAdd}) => {
+const MonthCalendar = ({viewTitle, targetedDate, targetedDateAdd}) => {
   const calendarData = getCalendarDatas(targetedDate);
   const { start, end, weekLength } = calendarData;
 
+  //week days iterator
   const createRange = (acc, dates = []) => dates.length >= weekLength ? dates : 
   createRange(acc.plus({ day: 1 }), [...dates, acc]);
 
+  //weeks iterator
   const buildRanges = (newRangeStart, array=[]) => newRangeStart > end  ? array :  
   buildRanges(newRangeStart.plus({ days: weekLength }).startOf('day'), [...array, createRange(newRangeStart)]);
 
+  //make a calendar
   const ranges = buildRanges( start.plus({ days: (start.startOf('week').weekday - start.weekday)}));
 
   return (
     <div>
-      <h2>{title}</h2>
+      <h2>{viewTitle}</h2>
       <div>
         <button onClick={() => targetedDateAdd({months: -1})} >-</button>
         <strong>{calendarData.month}</strong>

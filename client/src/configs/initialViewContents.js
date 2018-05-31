@@ -7,22 +7,23 @@ const targetedDate = DateTime.local().setLocale(locale);
 export default [
   {
     component: 'MonthCalendar',
-    withProps: {
-      title: 'Calendrier personnel',
+    title: 'Calendrier personnel',
+    state: {
       targetedDate,
     }
   },
   { 
     component: 'MonthCalendar',
-    withProps: {
-      title: 'Calendrier asbl',
+    title: 'Calendrier asbl',
+    state: {
       targetedDate,
     }
   },
   {
     component: 'ViewsManager',
-    withProps: {
-      title: 'Organiser'
+    title: 'Organiser',
+    state: {
+      
     }
   }
 ]

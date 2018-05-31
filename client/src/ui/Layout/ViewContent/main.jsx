@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 import { Container } from './style';
 import viewContents from 'ui/ViewContents';
 
-const ViewContent = ({ activeContent : { component, withProps } }) => {
+const ViewContent = ({ activeContent : { component, state, title } }) => {
   const Content = viewContents[component];
+  const withProps = {...state, viewTitle: title};
   return (
     <Container>
      <Content {...withProps} />
