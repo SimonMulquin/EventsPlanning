@@ -15,27 +15,13 @@ const { weekdays } = Info;
 
 const MonthCalendar = ({title, targetedDate, targetedDateAdd}) => {
   const calendarData = getCalendarDatas(targetedDate);
-
   const { start, end, weekLength } = calendarData;
 
-  const buildRanges = (newRangeStart, array=[]) => {
-    if (newRangeStart > end) {
-      return array;
-    } else {
-      
-      const createRange = (acc, dates = []) => {
-        if (dates.length >= weekLength) {
-          return dates;
-        } else {
-          return createRange(acc.plus({day: 1}), [...dates, acc] );
-        };
-      };
-      
-      const range = createRange(newRangeStart);
+  const createRange = (acc, dates = []) => dates.length >= weekLength ? dates : 
+  createRange(acc.plus({ day: 1 }), [...dates, acc]);
 
-      return buildRanges(newRangeStart.plus({ days: weekLength }).startOf('day'), [...array, range]);
-    };
-  };
+  const buildRanges = (newRangeStart, array=[]) => newRangeStart > end  ? array :  
+  buildRanges(newRangeStart.plus({ days: weekLength }).startOf('day'), [...array, createRange(newRangeStart)]);
 
   const ranges = buildRanges( start.plus({ days: (start.startOf('week').weekday - start.weekday)}));
 
@@ -43,35 +29,31 @@ const MonthCalendar = ({title, targetedDate, targetedDateAdd}) => {
     <div>
       <h2>{title}</h2>
       <div>
-        <div>
-          <div>
-            <button onClick={() => targetedDateAdd({months: -1})} >-</button>
-            <strong>{calendarData.month}</strong>
-            <button onClick={() => targetedDateAdd({months: 1})} >+</button>
-          </div>
-          <button onClick={() => targetedDateAdd({ years: -1 })} >-</button>
-          <strong>{calendarData.year}</strong>
-          <button onClick={() => targetedDateAdd({ years: 1 })} >+</button>
-        </div>
-        <div>
-          <Calendar>
-            <CalendarHead>
-              {weekdays('long', { locale }).map(label => 
-                <CalendarHeadElement number={ weekLength }>{label}</CalendarHeadElement>
-              )}
-              {ranges.map((range, index) => (
-                <CalendarRange key={index}>
-                  {range.map((date, i) => (
-                    <CalendarRangeElement key={i} number={ weekLength }>
-                      {date.day}
-                    </CalendarRangeElement>
-                  ))}
-                </CalendarRange>
-              ))}
-            </CalendarHead>
-          </Calendar>
-        </div>
+        <button onClick={() => targetedDateAdd({months: -1})} >-</button>
+        <strong>{calendarData.month}</strong>
+        <button onClick={() => targetedDateAdd({months: 1})} >+</button>
       </div>
+      <div>
+        <button onClick={() => targetedDateAdd({ years: -1 })} >-</button>
+        <strong>{calendarData.year}</strong>
+        <button onClick={() => targetedDateAdd({ years: 1 })} >+</button>
+      </div>
+      <Calendar>
+        <CalendarHead>
+          {weekdays('long', { locale }).map(label => 
+            <CalendarHeadElement number={ weekLength }>{label}</CalendarHeadElement>
+          )}
+          {ranges.map((range, index) => (
+            <CalendarRange key={index}>
+              {range.map((date, i) => (
+                <CalendarRangeElement key={i} number={ weekLength }>
+                  {date.day}
+                </CalendarRangeElement>
+              ))}
+            </CalendarRange>
+          ))}
+        </CalendarHead>
+      </Calendar>
     </div>
   );
 };

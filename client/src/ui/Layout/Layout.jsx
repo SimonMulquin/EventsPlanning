@@ -23,7 +23,7 @@ const Layout = ({ viewContents }) => {
         <Routes routes={{
           "/:viewContent": () => (
             <ViewContent />
-          )
+          ),
         }}  />
       </View>
       <RightTool />
