@@ -17,6 +17,12 @@ const ViewContent = ({ activeContent : { component, state, title } }) => {
 
 export default withRouter(connect(
   ( store, ownProps ) => ({
-    activeContent: ownProps.content ? ownProps.content : store.viewContents[ownProps.match.params.viewContent]
+    activeContent: store.views[ownProps.match.params.view] ? store.views[ownProps.match.params.view] : {
+      component: 'ViewsManager',
+      title: 'Organiser',
+      state: {
+
+      }
+    }
   })
 )(ViewContent));

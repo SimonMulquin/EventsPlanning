@@ -62,5 +62,5 @@ const MonthCalendar = ({viewTitle, targetedDate, targetedDateAdd}) => {
 };
 
 export default withRouter(connect(null, (dispatch, ownProps) => ({
-  targetedDateAdd: payload => dispatch(addToTargetedDate({...payload, index: parseInt(ownProps.match.params.viewContent)}))
+  targetedDateAdd: payload => dispatch(addToTargetedDate({...payload, index: parseInt(ownProps.match.params.view)}))
 }))(MonthCalendar));

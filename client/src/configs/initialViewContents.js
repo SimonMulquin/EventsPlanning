@@ -11,19 +11,5 @@ export default [
     state: {
       targetedDate,
     }
-  },
-  { 
-    component: 'MonthCalendar',
-    title: 'Calendrier asbl',
-    state: {
-      targetedDate,
-    }
-  },
-  {
-    component: 'ViewsManager',
-    title: 'Organiser',
-    state: {
-      
-    }
   }
 ]

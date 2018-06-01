@@ -1,17 +1,22 @@
 import { combineReducers } from 'redux';
 
-import viewContents from './viewContentsReducer';
+import views from './viewsReducer';
 
 export default combineReducers({
-  viewContents,
+  views,
 });
 
 export const addToTargetedDate = payload => ({
-  type: "VC_ADD_TO_TARGETED_DATE",
+  type: "VIEW_ADD_TO_TARGETED_DATE",
   payload
 });
 
-export const addViewContent = payload => ({
-  type: "VC_ADD",
+export const addView = payload => ({
+  type: "VIEWS_ADD",
+  payload
+});
+
+export const deleteView = payload => ({
+  type: "VIEW_DELETE",
   payload
 })

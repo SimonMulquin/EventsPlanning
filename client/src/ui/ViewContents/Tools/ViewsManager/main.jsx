@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 
-import { addViewContent } from 'api/redux';
+import { addView } from 'api/redux';
 
 class ViewsManager extends Component {
   constructor(props){
@@ -11,12 +11,12 @@ class ViewsManager extends Component {
   };
 
   render() {
-    const { viewContents, add } = this.props;
+    const { views, add } = this.props;
 
     return (
       <div>
         <ul>
-          {viewContents.filter(vc => vc.component !== 'ViewsManager').map((view, index) => (
+          {views.filter(vc => vc.component !== 'ViewsManager').map((view, index) => (
             <li>
               <span>{view.title}</span>
             </li>
@@ -35,10 +35,10 @@ class ViewsManager extends Component {
 };
 
 export default connect(
-  ({viewContents}) => ({
-    viewContents
+  ({views}) => ({
+    views
   }),
   dispatch => ({
-    add: name => dispatch(addViewContent({ name }))
+    add: name => dispatch(addView({ name }))
   })
 )(ViewsManager);

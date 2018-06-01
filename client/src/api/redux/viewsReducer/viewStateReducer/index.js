@@ -3,7 +3,7 @@ import merge from 'deepmerge';
 import targetedDate from './targetedDateReducer';
 
 const actions = {
-  "VC_WP_UPDATE": (state, payload) => merge(state, payload),
+  "VIEW_STATE_UPDATE": (state, payload) => merge(state, payload),
 };
 
 export default (state, { type, payload }) => 
