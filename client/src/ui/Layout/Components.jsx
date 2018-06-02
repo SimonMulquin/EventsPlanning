@@ -20,9 +20,9 @@ export const LeftTool = styled.div`
   top: ${({theme}) => theme.header.height};
   left: 0;
   height: calc(100vh - ${({theme}) => theme.header.height});
-  overflow-y: auto;
-  overflow-x: hidden;
-  border-right: 1px solid black;
+  overflow: hidden;
+  border-right: ${({ theme }) => theme.layout.border};
+  vertical-align: top;
 `;
 
 export const RightTool = styled.div`
@@ -32,9 +32,9 @@ export const RightTool = styled.div`
   top: ${({ theme }) => theme.header.height};
   right: 0;
   height: calc(100vh - ${({ theme }) => theme.header.height});
-  overflow-y: auto;
-  overflow-x: hidden;
-  border-left: 1px solid black;
+  overflow:hidden;
+  border-left: ${({ theme }) => theme.layout.border};
+  vertical-align: top;
 `;
 
 export const View = styled.div`
@@ -42,7 +42,7 @@ export const View = styled.div`
   position: fixed;
   width: ${({ theme }) => theme.view.width}em;
   top: ${({ theme }) => theme.header.height};
-  left: ${({ theme }) => theme.tools.left.width}em;
+  vertical-align: top;left: ${({ theme }) => theme.tools.left.width}em;
   height: calc(100vh - ${({ theme }) => theme.header.height});
   overflow: hidden;
 `;

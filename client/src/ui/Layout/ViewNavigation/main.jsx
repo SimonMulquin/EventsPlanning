@@ -4,22 +4,22 @@ import { withRouter } from 'react-router-dom';
 
 import { deleteView } from 'api/redux';
 
-import { Container, Option, SLink } from './style';
+import { Container, Option, SLink, Delete , Add} from './style';
 
 const ViewNavigation = ({options, match: { params }, del }) => {
   return (
     <Container>
       <Option>
-        <SLink active={!params.view} to='/' >
+        <Add active={!params.view} add to='/' >
           +
-        </SLink>
+        </Add>
       </Option>
       {options.map((option, index) => (
         <Option key={index}>
           <SLink active={parseInt(params.view, 10) === index} to={option.to}>
             {option.label}
-            <button onClick={e =>{ e.preventDefault(); del(index)}} >x</button>
           </SLink>
+          <Delete onClick={e => { e.preventDefault(); del(index) }} >x</Delete>
         </Option>
       ))}
     </Container>

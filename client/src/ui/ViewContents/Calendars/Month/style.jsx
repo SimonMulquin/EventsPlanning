@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
+  export const Container = styled.div`
+  display: block;
+  position: relative;
+  color: ${({ theme }) => theme.secondaryColor};
+  height: auto;
+`;
+
 export const Calendar = styled.div`
   display: inline-block;
   position: relative;
   width: ${({ theme }) => theme.view.calendar.width};
-  border: solid black 1px;
+  border: ${({ theme }) => theme.layout.border};
 `;
 
 export const CalendarHead = styled.div`
@@ -22,7 +29,7 @@ export const CalendarHeadElement = styled.div`
   display: inline-block;
   position: relative;
   width: ${props => props.theme.view.calendar.width / props.number }em;
-  border: solid black 1px;
+  border: ${({ theme }) => theme.layout.border};
 `;
 
 export const CalendarRangeElement = styled(CalendarHeadElement)`

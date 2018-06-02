@@ -9,7 +9,7 @@ import { locale } from 'configs/intl';
 
 import getCalendarDatas from 'tools/helpers/formats/calendarDatasHelper';
 
-import { Calendar, CalendarHead, CalendarHeadElement, CalendarRange, CalendarRangeElement} from './style';
+import { Container, Calendar, CalendarHead, CalendarHeadElement, CalendarRange, CalendarRangeElement} from './style';
 
 const { weekdays } = Info;
 
@@ -29,7 +29,7 @@ const MonthCalendar = ({viewTitle, targetedDate, targetedDateAdd}) => {
   const ranges = buildRanges( start.plus({ days: (start.startOf('week').weekday - start.weekday)}));
 
   return (
-    <div>
+    <Container>
       <h2>{viewTitle}</h2>
       <div>
         <button onClick={() => targetedDateAdd({months: -1})} >-</button>
@@ -57,7 +57,7 @@ const MonthCalendar = ({viewTitle, targetedDate, targetedDateAdd}) => {
           ))}
         </CalendarHead>
       </Calendar>
-    </div>
+    </Container>
   );
 };
 

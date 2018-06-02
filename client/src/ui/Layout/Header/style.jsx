@@ -6,7 +6,7 @@ export const Container = styled.div`
   width: 100%;
   height: ${({ theme }) => theme.header.height};
   background-color: ${({ theme }) => theme.header.color};
-  border-bottom: 1px solid black;
+  border-bottom: ${({ theme }) => theme.layout.border};
 `;
 
 export const Title = styled.h1`

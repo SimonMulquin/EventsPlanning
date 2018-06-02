@@ -9,14 +9,14 @@ body {
   position: relative;
   width: 100vw;
   height: auto;
-  min-height: 100vh;  
+  min-height: 100vh;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
   font-size: 1vw;
 }
 
 #root {
-  background-color: #eeeeee;
+  background-color: #f4e5ef;
 }
 
 a {
