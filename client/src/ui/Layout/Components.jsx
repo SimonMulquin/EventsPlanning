@@ -9,8 +9,11 @@ export { Header, ViewContent, ViewNavigation };
 export const Page = styled.div`
   display: block;
   position: relative;
-  width: 100%;
+  width: 100em;
   min-height: 100vh;
+  padding-left: ${({ theme }) => theme.tools.left.width}em;
+  padding-top: ${({ theme }) => theme.header.height};
+  padding-right: ${({ theme }) => theme.tools.right.width}em;
 `;
 
 export const LeftTool = styled.div`
@@ -30,7 +33,7 @@ export const RightTool = styled.div`
   position: fixed;
   width: ${({ theme }) => theme.tools.right.width}em;
   top: ${({ theme }) => theme.header.height};
-  right: 0;
+  left: ${({ theme }) => theme.tools.left.width + theme.view.width}em;
   height: calc(100vh - ${({ theme }) => theme.header.height});
   overflow:hidden;
   border-left: ${({ theme }) => theme.layout.border};
@@ -39,10 +42,7 @@ export const RightTool = styled.div`
 
 export const View = styled.div`
   display: inline-block;
-  position: fixed;
-  width: ${({ theme }) => theme.view.width}em;
-  top: ${({ theme }) => theme.header.height};
-  vertical-align: top;left: ${({ theme }) => theme.tools.left.width}em;
-  height: calc(100vh - ${({ theme }) => theme.header.height});
-  overflow: hidden;
+  position: relative;
+  width: 100%;
+  vertical-align: top;
 `;

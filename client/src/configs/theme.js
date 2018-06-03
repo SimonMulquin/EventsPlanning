@@ -17,7 +17,7 @@ export default {
     color: mainColor,
   },
   view: {
-    width: '60',
+    width: 60,
     navigation: {
       height: '42px',
       option: {
@@ -32,10 +32,10 @@ export default {
   },
   tools: {
     left: {
-      width: '15'
+      width: 15
     },
     right: {
-      width: '25'
+      width: 25
     }
   },
 };
