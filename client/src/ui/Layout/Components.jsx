@@ -42,7 +42,8 @@ export const RightTool = styled.div`
 
 export const View = styled.div`
   display: inline-block;
-  position: relative;
-  width: 100%;
+  position: fixed;
+  left: ${({ theme }) => theme.tools.left.width}em;
+  width:  ${({ theme }) => theme.view.width}em;
   vertical-align: top;
 `;
