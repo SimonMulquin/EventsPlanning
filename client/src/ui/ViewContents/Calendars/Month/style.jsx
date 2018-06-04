@@ -5,6 +5,7 @@ import styled from 'styled-components';
   position: relative;
   color: ${({ theme }) => theme.secondaryColor};
   height: auto;
+  padding-bottom: 1em;
 `;
 
 export const Calendar = styled.div`

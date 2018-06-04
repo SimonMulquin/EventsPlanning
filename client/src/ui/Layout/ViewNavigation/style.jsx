@@ -5,18 +5,19 @@ import { Link } from 'react-router-dom';
 export const Container = styled.ul`
   display: block;
   position: relative;
-  height: ${({ theme }) => theme.view.navigation.height};
+  height: auto;
   width: 100%;
-  padding: 0 0 0 3px;
+  padding: 0 ${({ theme }) => theme.view.navigation.height} 0 3px;
   border-bottom: ${({ theme }) => theme.layout.border};
-  overflow: hidden;
+  overflow-y: auto;
+  white-space: nowrap;
 `;
 
 export const Option = styled.li`
   display: inline-block;
   position: relative;
   width: auto;
-  height: 100%;
+  height: ${({ theme }) => theme.view.navigation.height};
   padding: 0;
 `;
 
@@ -54,7 +55,7 @@ export const Delete = styled.button`
   padding: 0;
   border-radius: 0 8px 0 0;
   overflow: hidden;
-  margin-right: 6px;
+  margin-right: 8px;
   cursor: pointer;
   border-top: ${({ theme }) => theme.layout.border};
   border-right: ${({ theme }) => theme.layout.border};
