@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import { deleteView } from 'api/redux';
 
-import { Container, Option, SLink, Delete , Add} from './style';
+import { Container, Nav, OverNav, Option, SLink, Delete , Add} from './style';
 
 class ViewNavigation extends Component {
   constructor(props) {
@@ -13,41 +13,53 @@ class ViewNavigation extends Component {
     this.preventScroll = true;
   };
 
+  componentDidMount() {
+    this.nav.scrollLeft = this.activeLink.offsetLeft - 50; 
+    this.forceUpdate();
+  };
+
   render() {
     const { options, match: { params }, del } = this.props;
 
     const scroll = (initialSpeed, delay = 1) => {
-      const prevScroll = this.container.scrollLeft;
-      this.container.scrollLeft = prevScroll+ initialSpeed;
-      console.log(prevScroll, initialSpeed);
+      const prevScroll = this.nav.scrollLeft;
+      this.nav.scrollLeft = prevScroll+ initialSpeed;
+      const newSpeed = initialSpeed * Math.ceil(delay / 10);
       return this.preventScroll ? false :
         setTimeout(
           ()  => scroll(
-            initialSpeed * Math.ceil(delay/10),
+              newSpeed > 120 ? 
+              120 : 
+              newSpeed < -120 ? 
+              -120 : 
+              newSpeed
+            ,
             delay + 1
           ),
-          80
+          60
         );
     };
 
     return (
-      <Container innerRef={node => this.container = node} >
-        <Option>
-          <Add active={!params.view} add to='/' >
-            +
-        </Add>
-        </Option>
-        {options.map((option, index) => (
-          <Option key={index}>
-            <SLink active={parseInt(params.view, 10) === index} to={option.to}>
-              {option.label}
-            </SLink>
-            <Delete onClick={e => { e.preventDefault(); del(index) }} >x</Delete>
+      <Container>
+        <Nav innerRef={node => this.nav = node} >
+          <Option {...!params.view ? { innerRef: node => this.activeLink = node} : {}} >
+            <Add active={!params.view} add to='/' >
+                +
+            </Add>
           </Option>
-        ))}
-        <div onMouseOver={() => {this.preventScroll = false; scroll(-1);}} onMouseLeave={() => this.preventScroll = true} >--</div>
-        <div onMouseOver={() => { this.preventScroll = false; scroll(1);}} onMouseLeave={() => this.preventScroll = true} >++</div>
-      </Container>
+          {options.map((option, index) => (
+            <Option {...parseInt(params.view, 10) === index ? {innerRef: node => this.activeLink = node} : {}} key={index}>
+              <SLink active={parseInt(params.view, 10) === index} to={option.to}>
+                {option.label}
+              </SLink>
+              <Delete onClick={e => { e.preventDefault(); del(index) }} >x</Delete>
+            </Option>
+          ))}
+        </Nav>
+        <OverNav left onMouseOver={() => { this.preventScroll = false; scroll(-6); }} onMouseLeave={() => this.preventScroll = true} />
+        <OverNav onMouseOver={() => { this.preventScroll = false; scroll(6); }} onMouseLeave={() => this.preventScroll = true} />
+      </Container >
     );
   };
 };

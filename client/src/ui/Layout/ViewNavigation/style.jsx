@@ -1,16 +1,39 @@
 import styled from 'styled-components';
-
 import { Link } from 'react-router-dom';
 
-export const Container = styled.ul`
+export const Container = styled.div`
+  display: block;
+  position: relative;
+  height: auto;
+  max-height: ${({ theme }) => theme.view.navigation.height};
+  width: 100%;
+  overflow: hidden;
+  border-bottom: ${({ theme }) => theme.layout.border};
+`;
+
+export const Nav = styled.ul`
   display: block;
   position: relative;
   height: auto;
   width: 100%;
-  padding: 0 ${({ theme }) => theme.view.navigation.height} 0 3px;
-  border-bottom: ${({ theme }) => theme.layout.border};
+  padding: 0 ${({ theme }) => theme.view.navigation.height};
   overflow-y: auto;
   white-space: nowrap;
+`;
+
+export const OverNav = styled.div`
+  display: ${props => props.hidden ? 'hidden' : 'inline-block'};
+  position: absolute;
+  z-index: 9000;
+  height: ${({ theme }) => theme.view.navigation.height};
+  width: ${({ theme }) => theme.view.navigation.height};
+  background-color: rgba(0,0,0,.2);
+  top: 0;
+  ${props => props.left ? `
+    left: 0;
+  ` : `
+    right: 0;
+  `}
 `;
 
 export const Option = styled.li`

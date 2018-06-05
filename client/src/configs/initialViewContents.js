@@ -53,5 +53,103 @@ export default [
     state: {
       targetedDate,
     }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
+  },
+  {
+    component: 'MonthCalendar',
+    title: 'Calendrier personnel',
+    state: {
+      targetedDate,
+    }
   }
 ]
