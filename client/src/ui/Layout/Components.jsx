@@ -26,6 +26,7 @@ export const LeftTool = styled.div`
   overflow: hidden;
   border-right: ${({ theme }) => theme.layout.border};
   vertical-align: top;
+  background-color: rgba(0,0,0,.1);
 `;
 
 export const RightTool = styled.div`

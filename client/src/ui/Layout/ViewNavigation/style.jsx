@@ -27,7 +27,7 @@ export const OverNav = styled.div`
   z-index: 9000;
   height: ${({ theme }) => theme.view.navigation.height};
   width: ${({ theme }) => theme.view.navigation.height};
-  background-color: rgba(0,0,0,.2);
+  background-color: rgba(0,0,0,.1);
   top: 0;
   ${props => props.left ? `
     left: 0;

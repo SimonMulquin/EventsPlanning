@@ -18,6 +18,10 @@ class ViewNavigation extends Component {
     this.forceUpdate();
   };
 
+  componentDidUpdate() {
+    this.activeLink ? this.nav.scrollLeft = this.activeLink.offsetLeft - 50 : false;
+  };
+
   render() {
     const { options, match: { params }, del } = this.props;
 
