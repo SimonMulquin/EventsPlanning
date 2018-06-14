@@ -18,7 +18,7 @@
 
 ## Features to be covered for the v.1 
 
-  * Authentication with Google Oauth
+  * Authentication
   * French
   * Own Calendar
   * Month View

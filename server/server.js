@@ -26,6 +26,7 @@ server.use(
 
 //startup
 createServer(server).listen(port, '0.0.0.0', err => {
+  console.log('Startup ...');
   if ( err ) { throw new Error('Failed to startup: ', err) };
   
   new SubscriptionServer(
