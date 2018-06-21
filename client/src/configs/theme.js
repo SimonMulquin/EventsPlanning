@@ -1,12 +1,14 @@
 const mainColor = '#9d1254';
-const secondaryColor = '#5c4755';
+const secondaryColor = '#282f44';
+const secondaryColor_light = "#8087a0";
 
-const valid = '#39b566';
-const error = '#ac211d';
+const valid = '#129d5c';
+const error = '#9d1712';
 
 export default {
   mainColor,
   secondaryColor,
+  secondaryColor_light,
   valid,
   error,
   layout: {
@@ -27,7 +29,8 @@ export default {
       }
     },
     calendar: {
-      width: 57
+      width: 57,
+      border: `1px solid ${secondaryColor}`
     }
   },
   tools: {

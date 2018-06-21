@@ -12,7 +12,7 @@ export const Calendar = styled.div`
   display: inline-block;
   position: relative;
   width: ${({ theme }) => theme.view.calendar.width};
-  border: ${({ theme }) => theme.layout.border};
+  border: ${({ theme }) => theme.view.calendar.border};
 `;
 
 export const CalendarHead = styled.div`
@@ -30,7 +30,7 @@ export const CalendarHeadElement = styled.div`
   display: inline-block;
   position: relative;
   width: ${props => props.theme.view.calendar.width / props.number }em;
-  border: ${({ theme }) => theme.layout.border};
+  border: ${({ theme }) => theme.view.calendar.border};
 `;
 
 export const CalendarRangeElement = styled(CalendarHeadElement)`
