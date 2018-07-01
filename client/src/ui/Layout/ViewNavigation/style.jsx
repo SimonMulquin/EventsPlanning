@@ -12,13 +12,14 @@ export const Container = styled.div`
 `;
 
 export const Nav = styled.ul`
-  display: block;
+  display: inline-block;
   position: relative;
   height: auto;
-  width: 100%;
+  width: calc(100% - ${({ theme }) => theme.view.navigation.height});
   padding: 0 ${({ theme }) => theme.view.navigation.height};
   overflow-y: auto;
   white-space: nowrap;
+  vertical-align: top;
 `;
 
 export const OverNav = styled.div`
@@ -30,7 +31,7 @@ export const OverNav = styled.div`
   background-color: rgba(0,0,0,.1);
   top: 0;
   ${props => props.left ? `
-    left: 0;
+    left: ${props.theme.view.navigation.height};
   ` : `
     right: 0;
   `}
@@ -84,27 +85,21 @@ export const Delete = styled.button`
   border-right: ${({ theme }) => theme.layout.border};
 `;
 
-export const Add = styled(Link)`
+export const Menu = styled(Link)`
   display: inline-block;
   position: relative;
   background-color: ${({ theme }) => theme.valid};
   color: #fff;
-  vertical-align: bottom;
-  top: 15%;
+  vertical-align: top;
   border: 0;
   outline: none;
   box-shadow: none;
-  height: 85%;
-  line-height: 85%;
+  height: ${({ theme }) => theme.view.navigation.height};
+  line-height: ${({ theme }) => theme.view.navigation.height};
   width: ${({ theme }) => theme.view.navigation.height};
-  padding-top: 10px;
-  border-radius: 0 8px 0 0;
   overflow: hidden;
-  margin: 0 6px;
   text-align: center;
   font-size: 1.4em;
   font-size: bold;
-  border-top: ${({ theme }) => theme.layout.border};
   border-right: ${({ theme }) => theme.layout.border};
-  border-left: ${({ theme }) => theme.layout.border};
 `;

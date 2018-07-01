@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import { deleteView } from 'api/redux';
 
-import { Container, Nav, OverNav, Option, SLink, Delete , Add} from './style';
+import { Container, Nav, OverNav, Option, SLink, Delete , Menu} from './style';
 
 class ViewNavigation extends Component {
   constructor(props) {
@@ -46,12 +46,10 @@ class ViewNavigation extends Component {
 
     return (
       <Container>
+        <Menu {...!params.view ? { innerRef: node => this.activeLink = node } : {}} active={!params.view} add to='/' >
+          +
+        </Menu>
         <Nav innerRef={node => this.nav = node} >
-          <Option {...!params.view ? { innerRef: node => this.activeLink = node} : {}} >
-            <Add active={!params.view} add to='/' >
-                +
-            </Add>
-          </Option>
           {options.map((option, index) => (
             <Option {...parseInt(params.view, 10) === index ? {innerRef: node => this.activeLink = node} : {}} key={index}>
               <SLink active={parseInt(params.view, 10) === index} to={option.to}>
