@@ -7,7 +7,7 @@
     "deepmerge": "^2.1.1",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
-    "luxon": "^1.2.1",
+    "luxon": "^1.28.1",
     "react": "^16.4.0",
     "react-apollo": "^2.1.8",
     "react-dom": "^16.4.0",
